@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Access</title>
+</head>
+<body>
+    <h1>Admin Access</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="admin">Enter Admin Code:</label>
+        <input type="text" id="admin" name="admin"><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
