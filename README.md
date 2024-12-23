@@ -1,6 +1,6 @@
 **Report on OWASP Top 10 Vulnerabilities in the Application**
 
-This app is a Cyber Security Base 2024 Project 1 repo with 5 OWASP vulnerabilities made with Django. This simple webapp demonstrates multiple different vulnerabilities that are common is similar web apps. This app should not be used in any other way than running locally and with acknowledgment of the vulnerabilities, this app is for educational purposes only. In the app, I have highlighted only a few vulnerabilities and their potential fixes, but the app does contain more vulnerabilities than the highlighted ones.
+This app is a Cyber Security Base 2024 Project 1 repo with 5 OWASP vulnerabilities made with Django. This simple webapp demonstrates multiple different vulnerabilities that are common in similar web apps. This app should not be used in any other way than running locally and with acknowledgment of the vulnerabilities as this app is for educational purposes only. In the app, I have highlighted only a few vulnerabilities and their potential fixes, but the app does contain more vulnerabilities than the highlighted ones.
 
 **FLAW 1: Broken Access Control**
 
