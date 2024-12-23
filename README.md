@@ -30,8 +30,8 @@ Passwords stored in plaintext in the database is a security risk. If the databas
 
 The application uses raw SQL queries to authenticate users, so its vulnerable to SQL injection attacks. SQL injection happens when user input is included in a query without proper sanitisation, allowing attackers to manipulate the query’s logic and access unauthorized data. By injecting malicious SQL code, attackers can bypass authentication or extract sensitive data. For example, if you input the following queries into login form, you can bypass the authentication:
 
-Username: username = ' OR '1'='1
-Password: password = ' OR '1'='1
+- Username: username = ' OR '1'='1
+- Password: password = ' OR '1'='1
 
 **Relevant Code:** views.py, Function: login_view
 
@@ -47,7 +47,7 @@ In addition, you can use an Object-Relational Mapper (ORM) for database interact
 
 Description of Flaw: Security misconfigurations can happen from improper settings in production environments. The application has DEBUG enabled, which exposes sensitive information, e.g., stack traces and database configurations, when errors occur. An attacker can deliberately trigger errors to view detailed debug information. This data may reveal file paths, API keys, or other critical information to help in attacks. In addition, the secret key is exposed in the source code, which should not be the case. This is a common mistake, even though it can be removed later on, the secret key may persist in older commits.
 
-**Relevant Code:**settings.py
+**Relevant Code:** settings.py
 
 ![image](https://github.com/user-attachments/assets/3c10ed2c-7f3f-41de-b98e-ca7a64404ab7)
 
@@ -57,8 +57,8 @@ Description of Flaw: Security misconfigurations can happen from improper setting
 
 The application allows users to specify an arbitrary URL for redirection without validation. This lack of validation opens the application to SSRF attacks, where an attacker can make the server issue requests to unintended locations. Such requests could access sensitive internal systems, exploit cloud metadata endpoints, or redirect users to malicious websites. An attacker could abuse the next parameter to redirect users to a malicious site for phishing purposes or exploit internal server networks. For example:
 
-http://cyberapp.com/unvalidated-redirect/?next=http://malicious.com
-http://cyberapp.com/unvalidated-redirect/?next=http://internal-system/admin
+- http://cyberapp.com/unvalidated-redirect/?next=http://malicious.com
+- http://cyberapp.com/unvalidated-redirect/?next=http://internal-system/admin
 
 These scenarios allow attackers to leverage the application's trust in its internal network or mislead users into visiting compromised pages. It can in theory also expose cloud provider metadata APIs, potentially leaking sensitive data like access tokens, and provide amplification of Distributed Denial of Service (DDoS) attacks by sending numerous requests via the application.
 
