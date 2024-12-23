@@ -42,6 +42,7 @@ The application uses raw SQL queries to authenticate users, so its vulnerable to
 ![image](https://github.com/user-attachments/assets/77d70148-26a8-45fe-9c16-73082d3a81aa)
 
 In addition, you can use an Object-Relational Mapper (ORM) for database interactions, implement input validation to restrict acceptable data formats, use prepared statements or stored procedures for direct database queries.
+
  
 **FLAW 4: Security Misconfiguration**
 
