@@ -91,7 +91,54 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+"""
+ LOGGING = {
+     "version": 1,
+     "disable_existing_loggers": False,
+     "formatters": {
+         "verbose": {
+             "format": "{levelname} {asctime} {module} {process:d} {thread:d} {message}",
+             "datefmt": "%Y-%m-%d_%H:%M:%S",
+             "style": "{",
+         },
+         "simple": {
+             "format": "{levelname} {message}",
+             "style": "{",
+         },
+     },
+     "handlers": {
+         "file": {
+             "level": "INFO",
+             "class": "logging.handlers.TimedRotatingFileHandler",
+             "formatter": "verbose",
+             "filename": "./logs/cyberapp.log",
+             "when": "midnight",
+             "interval": 1,
+             "backupCount": 5,
+             "encoding": None,
+             "delay": False,
+             "utc": False,
+             "atTime": None,
+             "errors": None,
+         },
+         "console": {
+             "level": "INFO",
+             "class": "logging.StreamHandler",
+             "formatter": "simple",
+         },
+     },
+     "loggers": {
+         "django": {
+             "handlers": ["console"],
+             "propagate": True,
+         },
+         "": {
+             "handlers": ["file"],
+             "level": "INFO",
+         },
+     },
+ }
+"""
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
