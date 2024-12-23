@@ -46,7 +46,7 @@ In addition, you can use an Object-Relational Mapper (ORM) for database interact
  
 **FLAW 4: Security Misconfiguration**
 
-Description of Flaw: Security misconfigurations can happen from improper settings in production environments. The application has DEBUG enabled, which exposes sensitive information, e.g., stack traces and database configurations, when errors occur. An attacker can deliberately trigger errors to view detailed debug information. This data may reveal file paths, API keys, or other critical information to help in attacks. In addition, the secret key is exposed in the source code, which should not be the case. This is a common mistake, even though it can be removed later on, the secret key may persist in older commits.
+Security misconfigurations can happen from improper settings in production environments. The application has DEBUG enabled, which exposes sensitive information, e.g., stack traces and database configurations, when errors occur. An attacker can deliberately trigger errors to view detailed debug information. This data may reveal file paths, API keys, or other critical information to help in attacks. In addition, the secret key is exposed in the source code, which should not be the case. This is a common mistake, even though it can be removed later on, the secret key may persist in older commits.
 
 **Relevant Code:** settings.py
 
@@ -70,3 +70,12 @@ These scenarios allow attackers to leverage the application's trust in its inter
 **How to Fix It:** To fix this vulnerability, in the application can be implemented stricter validation for the next parameter. The application should only redirect to trusted URLs and not allow every redirect:
  
 ![image](https://github.com/user-attachments/assets/09d51a3c-92f0-49fa-9d44-d52bbe84b37b)
+
+**FLAW 6: Security Logging and Monitoring Failures**
+
+The app has not included any kind of logging or monitoring mechanisms in order to detect security events or anomalies. Usually monitoring is the first step in order to rectify issues if tests do not detect a possible bug or security issue.
+
+**How to Fix It:** Added monitoring capabilities to the app manage.py file:
+
+![image](https://github.com/user-attachments/assets/08912199-720f-4109-8663-8c1adac67861)
+
